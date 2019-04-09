@@ -50,7 +50,20 @@ const ColorPicker = props => {
             {paintColorSwatch()}
           </div>
           <div className="pos-rel" style={{ marginTop: "20px" }}>
-            <div className="sub-header">Transparency</div>
+            <div className="sub-header">
+              <div>Transparency</div>
+              <input
+                value={(1 - props.color.a) * 10}
+                min={0}
+                max={10}
+                step={0.1}
+                precision={2}
+                type="number"
+                className="trans-div-input"
+                // style={{false}}
+                // onChange={props.onApplyColor}
+              />
+            </div>
             <div className="alpha-wrapper">
               <Alpha
                 {...props}
